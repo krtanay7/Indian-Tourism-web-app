@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="static/css/booking1.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<style>
+.body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.frontHeader {
+    background: #1b1a1a;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(219, 216, 216, 0.1); 
+    
+}
+
+.frontNavbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #e96575;
+    
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+}
+
+.contact_us_section {
+    padding: 60px 0;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+}
+
+/* Add this to your booking1.css file */
+#flashMessage {
+  text-align: center; /* Center the message container */
+  margin: 20px auto; /* Center the container horizontally */
+  padding: 15px; /* Add some padding around the message */
+  background-color: #d4edda; /* Background color (success message) */
+  color: #155724; /* Text color */
+  border-radius: 5px; /* Rounded corners */
+  width: 80%; /* Adjust the width as needed */
+  max-width: 600px; /* Optional: Limit the maximum width */
+}
+
+#flashMessage .success {
+  font-weight: bold; /* Make the text bold */
+  font-size: 1.25em; /* Increase the font size */
+}
+
+
+</style>
+
+<link rel="stylesheet" href="static/css/booking1.css">
+
+
+<body>
+    <div class="backg" style="background-image: url(static/image/img/bg7.jpg);background-position: center;background-size: cover; width:110%;
+    height:110vh;top:0px;left:0px;filter:blur(1px);position: fixed;z-index: -1; filter:brightness(80%);"></div>
+        <!-- hidden popup -->
+    <!-- Navbar -->
+    <div class="frontHeader">
+        <div class="frontNavbar">
+            <a href="index.html" class="logo">
+                <img src="static/image/img/incredible_india.png" alt="Travel">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Index</a></li>
+                <li><a href="booking.html">Home</a></li>
+                <li><a href="destination.html">Discover</a></li>
+                <li><a href="booking1.html">Bookings</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="contact1.html">Support</a></li>
+                <li><div id="profileIcon" class="profile-icon">👤</div></li>
+                <li><div class="search-icon">🔍</div></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Contact Us Section -->
+    <section class="contact_us_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <h1>Contact Us</h1>
+                    <form action="{{ url_for('contact1') }}" method="POST">
+                        <div class="form-group">
+                            <label for="consumer_name">Your Name</label>
+                            <input type="text" class="form-control" id="consumer_name" name="consumer_name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Gmail</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="feedback">Feedback/Suggestions</label>
+                            <textarea class="form-control" id="feedback" name="feedback" rows="4" placeholder="Enter your feedback or suggestions" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+            {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+        <div id="flashMessage">
+            {% for category, message in messages %}
+                <div class="{{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+        </div>
+    </section>
+
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zyP3B9ITzuxOX3W1xu18U2cbMR8cLMH9LDPswHOH" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gFvB5a63FD5aAFzDvdz+V6vZmbAcYbQekNO8osY2p7jqTk02jA" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+
+</html>

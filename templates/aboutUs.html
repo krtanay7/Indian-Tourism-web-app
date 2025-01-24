@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/booking1.css">
+    
+   
+</head>
+
+
+<body>
+    <div class="backg" style="background-image: url(static/image/public/mountains-190055_1280.jpg);background-position: center;background-size: cover; width:110%;
+height:110vh;top:0px;left:0px;filter:blur(1px);position: fixed;z-index: -1;"></div>
+    <!-- hidden popup -->
+
+            <div class="clash-card barbarian" id="popupbox">
+                <div class="clash-card__image clash-card__image--barbarian" style="z-index:0">
+                    <img src="static\image\public\—Pngtree—airplane travel tourism supplies_6374202.png" style="margin-top:-50px;"
+                        alt="flight" />
+                </div>
+                <div style="background-color: white; z-index:4;">
+                    <div class="clash-card__level clash-card__level--barbarian" style="color:black">Booking Confirmed for
+                    </div>
+                    <div class="clash-card__unit-name" id="sname">cookiesss</div>
+                    <div class="clash-card__unit-description" style="color:black">
+                        From : <span style="font-weight:bolder" id="sfrom">New Delhi</span> to <span
+                            style="font-weight : bolder; font-size:25px" id="sto">Mumbai</span><br>
+                        <br>
+                        Date of Departure : <span id="sdate">12-14 </span><br>
+                        <br>
+                        Price - <span style="font-weight : bolder" id="sprice">1234</span>
+
+                    </div>
+                </div>
+                <button id="closeit" style="margin-bottom:10px; padding:5px; border-radius: 15px; border:none; background-color: black;color: white;">close</button>
+            </div>
+    <!-- navbar -->
+    <div class="frontHeader">
+        <div class="frontNavbar" style="width:90%; margin:auto; height:60px">
+            <a href="index.html" class="logo"><img style="width:130px;"
+                    src="static\image\img\incredible_india.png" alt="Travel"></a>
+            <ul class="nav-links">
+              <li><a href="index.html"> Index</a></li>
+              <li><a href="booking.html">Home</a></li>
+              <li><a href="destination.html">Discover</a></li>
+              <li><a href="booking1.html">Bookings</a></li>
+              <li><a href="aboutUs.html">About Us</a></li>
+              <li><a href="contact1.html">Support</a></li>
+              <li><div  id="profileIcon" class="profile-icon">👤</div></li>
+              <li><div class="search-icon">🔍</div></li>
+              <!--<li><button id="signup" class="signup-btn">Sign Up</button></li>-->
+            </ul>
+          </div>
+
+
+        <!-- next -->
+        <section class="about_us_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mx-auto text-center">
+                        <h1>About Us</h1>
+                        <p>
+                            Welcome to Team Cookies, where we specialize in making your travel dreams come true! Our dedicated team is committed to providing the best travel experiences tailored to your needs. Whether you’re looking for a relaxing vacation or an adventurous journey, we have something for everyone.
+                        </p>
+                        <p>
+                            Our mission is to ensure that every aspect of your trip is handled with care and professionalism. With a team of experienced travel consultants and a network of reliable partners, we guarantee a seamless travel experience from start to finish.
+                        </p>
+                        <p>
+                            Thank you for choosing Team Cookies. We look forward to serving you!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Display the popup
+            document.getElementById('popupbox').style.display = 'block';
+            
+            // Optionally, you can now submit the form if needed
+            // this.submit(); // Uncomment this line if you want to proceed with the actual form submission after showing the popup
+        });
+
+        document.getElementById('closeit').addEventListener('click', function() {
+            document.getElementById('popupbox').style.display = 'none';
+        });
+    </script>
+
+    <script src="static/js/booking1.js"></script>
+</body>
+
+</html>
