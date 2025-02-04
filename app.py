@@ -13,8 +13,8 @@ app.secret_key = 'your_secret_key'  # Replace with a strong, random secret key
 # MySQL configuration
 db_config = {
     'host': 'localhost',
-    'user': 'root',
-    'password': 'user123',
+    'user': 'root',  #use your own userID
+    'password': 'user123', # use your own database password
     'database': 'heritage',
 }
 
