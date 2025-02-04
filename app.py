@@ -14,7 +14,7 @@ app.secret_key = 'your_secret_key'  # Replace with a strong, random secret key
 db_config = {
     'host': 'localhost',
     'user': 'root',
-    'password': 'ritesh123',
+    'password': 'user123',
     'database': 'heritage',
 }
 
@@ -263,8 +263,8 @@ def contact1():
 # Helper function to send email
 # gmail forgot 
 def send_email(subject, recipient, body):
-    sender_email = 'rajkumar777788889999000@gmail.com'
-    sender_password = 'hfou ygom tjlm zkqv'  # Replace with your email password
+    sender_email = 'kumar777788889999000@gmail.com'
+    sender_password = 'abc@1234567'  # Replace with your email password
     
     msg = MIMEText(body)
     msg['Subject'] = subject
